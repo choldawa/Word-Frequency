@@ -4,7 +4,7 @@ stan = read.csv(file='D.txt')
 glimpse(stan)
 
 #to calculate correlations 
-cor.test(stan_dat$mu, stan_dat$C, method="kendall") 
+cor.test(stan$mu, stan$C, method="kendall") 
 
 #Scatterplots of mu vs each variable
 ggplot(stan, aes(x = mean.daily.p, y = mu )) +

@@ -1,8 +1,10 @@
 library(tidyverse)
 
+#Load each plot independently as .csv
 
-df252 = read.csv('lpout252.csv')
-ggplot(data = df252, aes(x = day, y = lpobs))+
+#Clinton
+dfClinton = read.csv('Clinton.csv')
+ggplot(data = dfClinton, aes(x = day, y = lpobs))+
   geom_line(lwd = .2)+
   theme_bw() +
   geom_vline(xintercept = 348,  color='red', linetype = 'dashed')+
@@ -11,8 +13,9 @@ ggplot(data = df252, aes(x = day, y = lpobs))+
   theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = "./Clinton.pdf",height = 3, width = 4)
 
-df52 = read.csv('lpout57.csv')
-ggplot(data = df52, aes(x = day, y = lpobs))+
+#Trump
+dfTrump = read.csv('Trump.csv')
+ggplot(data = dfTrump, aes(x = day, y = lpobs))+
   geom_line(lwd = .2)+
   theme_bw() +
   geom_vline(xintercept = 348,  color='red', linetype = 'dashed')+
@@ -21,8 +24,9 @@ ggplot(data = df52, aes(x = day, y = lpobs))+
   theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = "./Trump.pdf",height = 3, width = 4)
 
-df317 = read.csv('lpout317.csv')
-ggplot(data = df317, aes(x = day, y = lpobs))+
+#Obama
+dfObama = read.csv('Obama.csv')
+ggplot(data = dfObama, aes(x = day, y = lpobs))+
   geom_line(lwd = .2)+
   theme_bw() +
   geom_vline(xintercept = 348,  color='red', linetype = 'dashed')+
@@ -31,9 +35,9 @@ ggplot(data = df317, aes(x = day, y = lpobs))+
   theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = "./Obama.pdf",height = 3, width = 4)
 
-
-df8678 = read.csv('lpout8678.csv')
-ggplot(data = df8678, aes(x = day, y = lpobs))+
+#Bracket
+dfBracket = read.csv('Bracket.csv')
+ggplot(data = dfBracket, aes(x = day, y = lpobs))+
   geom_line(lwd = .2)+
   theme_bw() +
   geom_vline(xintercept = 100,  color='red', linetype = 'dashed')+
@@ -44,8 +48,9 @@ ggplot(data = df8678, aes(x = day, y = lpobs))+
   theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = "./Bracket.pdf",height = 3, width = 4)
 
-df7953 = read.csv('lpout7953.csv')
-ggplot(data = df7953, aes(x = day, y = lpobs))+
+#Collusion
+dfCollusion = read.csv('Collusion.csv')
+ggplot(data = dfCollusion, aes(x = day, y = lpobs))+
   geom_line(lwd = .2)+
   theme_bw() +
   geom_vline(xintercept = 348,  color='red', linetype = 'dashed')+
@@ -54,6 +59,7 @@ ggplot(data = df7953, aes(x = day, y = lpobs))+
   theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = "./Collusion.pdf",height = 3, width = 4)
 
+#Privacy
 dfPrivacy = read.csv('Privacy.txt', header = F, sep = ' ')
 colnames(dfPrivacy) = c('day', 'word', 'n', 'z')
 dfPrivacy['lpobs'] = log(dfPrivacy['n']/dfPrivacy['z'])
@@ -65,7 +71,7 @@ ggplot(data = dfPrivacy, aes(x = day, y = lpobs))+
   theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = "./Privacy.pdf",height = 3, width = 4)
 
-
+#Sunday
 df211 = read.csv('Sunday.txt', header = F, sep = ' ')
 colnames(df211) = c('day', 'word', 'n', 'z')
 df211['lpobs'] = log(df211['n']/df211['z'])
@@ -78,6 +84,7 @@ ggplot(data = df211, aes(x = day, y = lpobs))+
 ggsave(filename = "./Sunday.pdf",height = 3, width = 4)
 #ggsave with aspect 3:4
 
+#Summer
 dfSummer = read.csv('Summer.txt', header = F, sep = ' ')
 colnames(dfSummer) = c('day', 'word', 'n', 'z')
 dfSummer['lpobs'] = log(dfSummer['n']/dfSummer['z'])
@@ -89,6 +96,7 @@ ggplot(data = dfSummer, aes(x = day, y = lpobs))+
   theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = "./Summer.pdf",height = 3, width = 4)
 
+#Fire
 dfFire = read.csv('fire.txt', header = F, sep = ' ')
 colnames(dfFire) = c('day', 'word', 'n', 'z')
 dfFire['lpobs'] = log(dfFire['n']/dfFire['z'])
@@ -100,6 +108,7 @@ ggplot(data = dfFire, aes(x = day, y = lpobs))+
   theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = "./Fire.pdf",height = 3, width = 4)
 
+#Mexico
 dfMexico = read.csv('mexico.txt', header = F, sep = ' ')
 colnames(dfFire) = c('day', 'word', 'n', 'z')
 dfFire['lpobs'] = log(dfFire['n']/dfFire['z'])
@@ -111,7 +120,7 @@ ggplot(data = dfFire, aes(x = day, y = lpobs))+
   theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = "./Mexico.pdf",height = 3, width = 4)
 
-
+#Amazon
 df = read.csv('amazon.txt', header = F, sep = ' ')
 colnames(df) = c('day', 'word', 'n', 'z')
 df['lpobs'] = log(df['n']/df['z'])
@@ -122,6 +131,7 @@ ggplot(data = df, aes(x = day, y = lpobs))+
   theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = "./Amazon.pdf",height = 3, width = 4)
 
+#Crisis
 df = read.csv('crisis.txt', header = F, sep = ' ')
 colnames(df) = c('day', 'word', 'n', 'z')
 df['lpobs'] = log(df['n']/df['z'])
@@ -132,6 +142,7 @@ ggplot(data = df, aes(x = day, y = lpobs))+
   theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = "./Crisis.pdf",height = 3, width = 4)
 
+#Violence
 df = read.csv('violence.txt', header = F, sep = ' ')
 colnames(df) = c('day', 'word', 'n', 'z')
 df['lpobs'] = log(df['n']/df['z'])
@@ -142,6 +153,7 @@ ggplot(data = df, aes(x = day, y = lpobs))+
   theme(plot.title = element_text(hjust = 0.5))
 ggsave(filename = "./Violence.pdf",height = 3, width = 4)
 
+#Championship
 df = read.csv('championship.txt', header = F, sep = ' ')
 colnames(df) = c('day', 'word', 'n', 'z')
 df['lpobs'] = log(df['n']/df['z'])
