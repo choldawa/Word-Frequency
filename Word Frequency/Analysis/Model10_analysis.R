@@ -7,12 +7,13 @@ glimpse(stan)
 cor.test(stan$mu, stan$C, method="kendall") 
 
 #Scatterplots of mu vs each variable
-ggplot(stan, aes(x = mean.daily.p, y = mu )) +
-  geom_point(alpha = .03, size =2) +
+ggplot(stan, aes(x = mean.daily.p, y = mu)) +
+  geom_hex(bins = 70)+
+  #scale_fill_gradient(trans = "log", labels = function(x) round(x,1))+ 
   theme_bw() + 
-  theme(text = element_text(size=40), aspect.ratio=2/3)+ 
-  ylim(-17,-5)+
-  xlim(-17,-5)+
+  theme(text = element_text(size=36), aspect.ratio=2/3)+ 
+  #ylim(-17,-5)+
+  xlim(-16,-6)+
   xlab("Observed Mean Log Prob")+
   ylab('Mu')+ 
   geom_smooth(method = 'lm')+
@@ -21,26 +22,28 @@ ggplot(stan, aes(x = mean.daily.p, y = mu )) +
 summary(lm(data = stan, mean.daily.p ~ mu))
 
 ggplot(stan, aes(x = mu, y = drift)) +
-  geom_hex(alpha = 1, bins = 50) +
+  geom_hex(bins = 80)+
   theme_bw() + 
-  theme(text = element_text(size=40), aspect.ratio=2/3)+ 
+  theme(text = element_text(size=36), aspect.ratio=2/3)+
   ylim(0,1.5)+
   ylab("Drift")+
   xlab('Mu')
 
 ggplot(stan, aes(x = mu, y = A)) +
-  geom_point(alpha = .03, size =2) +
+  #geom_point(alpha = .02, size =3) +
+  geom_hex(bins = 70)+
   theme_bw() + 
-  theme(text = element_text(size=40), aspect.ratio=2/3)+
+  theme(text = element_text(size=36), aspect.ratio=2/3)+
   geom_hline(yintercept=0, linetype="dashed", 
              color = "red", size=2)+
   ylim(-2,2)+
   xlab('Mu')
 
 ggplot(stan, aes(x = mu, y = B)) +
-  geom_point(alpha = .03, size =2) +
+  #geom_point(alpha = .02, size =3) +
+  geom_hex(bins = 70)+
   theme_bw() + 
-  theme(text = element_text(size=40), aspect.ratio=2/3)+
+  theme(text = element_text(size=36), aspect.ratio=2/3)+
   geom_hline(yintercept=0, linetype="dashed", 
              color = "red", size=2)+
   ylim(-1,1.1)+
@@ -48,18 +51,18 @@ ggplot(stan, aes(x = mu, y = B)) +
 
 
 ggplot(stan, aes(x = mu, y = C)) +
-  geom_point(alpha = .03, size =2) +
+  geom_hex(bins = 70)+
   theme_bw() + 
-  theme(text = element_text(size=40), aspect.ratio=2/3)+
+  theme(text = element_text(size=36), aspect.ratio=2/3)+
   geom_hline(yintercept=0, linetype="dashed", 
              color = "red", size=2)+
   ylim(-1,1)+
   xlab('Mu')
 
 ggplot(stan, aes(x = mu, y = theta)) +
-  geom_point(alpha = .03, size =2) +
+  geom_hex(bins = 80)+
   theme_bw() + 
-  theme(text = element_text(size=40), aspect.ratio=2/3)+
+  theme(text = element_text(size=36), aspect.ratio=2/3)+
   #geom_smooth(method = "loess", color = 'blue') + 
   ylim(0,1)+
   ylab("Theta")+
