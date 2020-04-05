@@ -21,7 +21,7 @@ ggplot(stan, aes(x = mean.daily.p, y = mu )) +
 summary(lm(data = stan, mean.daily.p ~ mu))
 
 ggplot(stan, aes(x = mu, y = drift)) +
-  geom_point(alpha = .03, size =2) +
+  geom_hex(alpha = 1, bins = 50) +
   theme_bw() + 
   theme(text = element_text(size=40), aspect.ratio=2/3)+ 
   ylim(0,1.5)+
