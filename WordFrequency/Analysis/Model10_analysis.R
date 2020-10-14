@@ -1,10 +1,13 @@
 library(tidyverse)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-stan = read.csv(file='D.txt')
+stan = read.csv(file='model-out20k.csv')
 glimpse(stan)
 
 #to calculate correlations 
-cor.test(stan$mu, stan$C, method="kendall") 
+cor.test(stan$mu, stan$A, method="kendall") 
+#B values greater than 1
+sum(stan$B<1)/length(stan$B)
+
 
 #Scatterplots of mu vs each variable
 ggplot(stan, aes(x = mean.daily.p, y = mu)) +
