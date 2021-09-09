@@ -1,5 +1,6 @@
 # Word-Frequency
-#### What dynamics govern how word frequencies change over time? We scraped millions of news articles and built probabilistic models to find out.
+### What dynamics govern how word frequencies change over time? 
+#### We scraped millions of news articles and built probabilistic models to find out.
 
 ## Project Intuition
 Think of a spring with a weight attached to the end. If we know the thickness of the spring, the weight of the object, and the initial displacement, we can get a pretty good idea of how the weight will move (and it's corresponding sine wave). This project uses the same intuition. We think of words as having certain basic characteristics the govern how they will change over time (plus noise, of course). These features are latent, but we can *infer* them from data, i.e. a few million news articles scraped every 20 minutes for three years. 
