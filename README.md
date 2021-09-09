@@ -4,7 +4,7 @@
 ## Project Intuition
 Think of a spring with a weight attached to the end. If we know the thickness of the spring, the weight of the object, and the initial displacement, we can get a pretty good idea of how the weight will move (and it's corresponding sine wave). This project uses the same intuition. We think of words as having certain basic characteristics the govern how they will change over time (plus noise, of course). These features are latent, but we can *infer* them from data, i.e. a bunch of news articles. 
 
-<img src="https://web2.ph.utexas.edu/~coker2/index.files/MassSpring.gif" width="100" height="100" />
+<img src="https://web2.ph.utexas.edu/~coker2/index.files/MassSpring.gif" width="150" height="150" />
 
 So in the end we have a bunch of parameters fit for each word (analogous to weight, displacement, etc.) and now we can talk about how words change over time by referring to their parameter values! Some words drift along, some rapidly spring into the lexicon, and some slowly decay out of favor.
 
