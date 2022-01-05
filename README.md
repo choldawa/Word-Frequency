@@ -1,5 +1,5 @@
 # What dynamics govern how word frequencies change over time?
-### We scraped millions of news articles and built probabilistic models to find out.
+### ...We scraped millions of news articles and built probabilistic models to find out.
 (Formally "Stochastic time-series analyses highlight the day-to-day dynamics of lexical frequencies", *in press* )
 
 
