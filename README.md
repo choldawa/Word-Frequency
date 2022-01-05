@@ -8,7 +8,7 @@
 
 <img src="https://web2.ph.utexas.edu/~coker2/index.files/MassSpring.gif" width="150" height="150" />
 
-Think of a spring with a weight attached to the end. If we know the thickness of the spring, the weight of the object, and the initial displacement, we can get a pretty good idea of how the weight will move (and it's corresponding sine wave). Basically knowing only a few parameters of the system allows you to compare the behavior of two similar systems. 
+Think of a spring with a weight attached to the end. If we know the thickness of the spring, the weight of the object, and the initial displacement, we can get a pretty good idea of how the weight will move (and it's corresponding sine wave). Basically knowing only a few parameters of the system allows us to compare the behavior of two similar systems. 
 
 This project uses the same intuition. We think of words as having certain basic characteristics (kind of like  weight, displacement, etc. in the spring example) that govern how they will change over time (plus noise, of course). For example, one of these parameters could be something like *burstiness*, or how rpaidly a word increases/decreases in usage (e.g., "wildfire" might be very bursty in a news cycle, while we'd expect "tree" to be less so). These features are latent, but we can *infer* them from data, i.e. a few million news articles scraped every 20 minutes for three years. 
 
