@@ -3,9 +3,10 @@
 (Formally "Stochastic time-series analyses highlight the day-to-day dynamics of lexical frequencies", *in press* )
 
 ## Project Intuition
-Think of a spring with a weight attached to the end. If we know the thickness of the spring, the weight of the object, and the initial displacement, we can get a pretty good idea of how the weight will move (and it's corresponding sine wave). This project uses the same intuition. We think of words as having certain basic characteristics the govern how they will change over time (plus noise, of course). These features are latent, but we can *infer* them from data, i.e. a few million news articles scraped every 20 minutes for three years. 
 
 <img src="https://web2.ph.utexas.edu/~coker2/index.files/MassSpring.gif" width="150" height="150" />
+
+Think of a spring with a weight attached to the end. If we know the thickness of the spring, the weight of the object, and the initial displacement, we can get a pretty good idea of how the weight will move (and it's corresponding sine wave). This project uses the same intuition. We think of words as having certain basic characteristics the govern how they will change over time (plus noise, of course). These features are latent, but we can *infer* them from data, i.e. a few million news articles scraped every 20 minutes for three years. 
 
 So in the end we have a bunch of parameters fit for each word (analogous to weight, displacement, etc. in the spring example) and now we can talk about how words change over time by referring to their parameter values! Some words drift along, some rapidly spring into the lexicon, and some slowly decay out of favor. To our knowledge, this is the first time these types of probabilistic parameterizations have been applied to real world language. 
 
